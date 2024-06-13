@@ -5,9 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "SourceCodePro Medium:size=16";
-static char *font2 ="JoyPixels:pixelsize=18:antialias=true:autohint=true";
-static int borderpx = 5;
+static char *font = "mono:pixelsize=16:antialias=true:autohint=true";
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -33,7 +32,7 @@ static float chscale = 1.0;
  *
  * More advanced example: L" `'\"()[]{}"
  */
- wchar_t *worddelimiters = L" ";
+wchar_t *worddelimiters = L" ";
 
 /* selection timeouts (in milliseconds) */
 static unsigned int doubleclicktimeout = 300;
@@ -84,7 +83,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha =0.80;
+float  alpha =0x11;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -92,24 +91,23 @@ static const char *colorname[] = {
 	"#cc241d",
 	"#98971a",
 	"#d79921",
-	"#689d6a", // THE GREEN
+	"#458588",
 	"#b16286",
-	"#458588", // THE BLUE
+	"#689d6a",
 	"#a89984",
 	"#928374",
 	"#fb4934",
 	"#b8bb26",
-	"#ff3000", // Directories and stuff
+	"#fabd2f",
 	"#83a598",
 	"#d3869b",
 	"#8ec07c",
 	"#ebdbb2",
 	[255] = 0,
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#000000",   /* 256 -> bg */
+	"#444444",   /* 256 -> bg */
 	"#ebdbb2",   /* 257 -> fg */
 	"#add8e6", /* 258 -> cursor */
-	///"#ebdbb2",   /* 257 -> fg */
 };
 
 
@@ -154,13 +152,10 @@ static unsigned int defaultattr = 11;
 /*
  * Xhot2  pdfsam            screenshotc     slstatus         text.d            vifm_run
  * background.sh  dmw_menubar.sh         file        git          mesources preferences to load at startup
-*/ 
-/*
+ 
 ResourcePref resources[] = {
 		{ "font",         STRING,  &font },
-		{ "fontalt0",     STRING,  &font2 },
-*/
-	/*	{ "color0",       STRING,  &colorname[0] },
+		{ "color0",       STRING,  &colorname[0] },
 		{ "color1",       STRING,  &colorname[1] },
 		{ "color2",       STRING,  &colorname[2] },
 		{ "color3",       STRING,  &colorname[3] },
@@ -189,7 +184,7 @@ ResourcePref resources[] = {
 		{ "borderpx",     INTEGER, &borderpx },
 		{ "cwscale",      FLOAT,   &cwscale },
 		{ "chscale",      FLOAT,   &chscale },
-		{ "alpha",        FLOAT,   &alpha }, 
+		{ "alpha",        FLOAT,   &alpha },
 };
 */
 /*
@@ -262,7 +257,7 @@ static Shortcut shortcuts[] = {
 */
 
 	{ MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
-	{ MODKEY,               XK_b,           externalpipe,   {.v = copyurlcmd } },
+	{ MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
 	{ MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
 };
 

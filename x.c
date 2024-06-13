@@ -14,7 +14,6 @@
 #include <X11/keysym.h>
 #include <X11/Xft/Xft.h>
 #include <X11/XKBlib.h>
-#include <X11/Xresource.h>
 
 static char *argv0;
 #include "arg.h"
@@ -45,6 +44,7 @@ typedef struct {
 } Key;
 
 /* Xresources preferences */
+/*
 enum resource_type {
 	STRING = 0,
 	INTEGER = 1,
@@ -56,7 +56,7 @@ typedef struct {
 	enum resource_type type;
 	void *dst;
 } ResourcePref;
-
+*/
 /* X modifiers */
 #define XK_ANY_MOD    UINT_MAX
 #define XK_NO_MOD     0
@@ -1938,7 +1938,7 @@ run(void)
 		}
 	}
 }
-
+/*
 int
 resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst)
 {
@@ -1974,11 +1974,11 @@ resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst)
 	}
 	return 0;
 }
-
+*/
 void
 config_init(void)
 {
-	char *resm;
+	/*char *resm;
 	XrmDatabase db;
 	ResourcePref *p;
 
@@ -1989,7 +1989,8 @@ config_init(void)
 
 	db = XrmGetStringDatabase(resm);
 	for (p = resources; p < resources + LEN(resources); p++)
-		resource_load(db, p->name, p->type, p->dst);
+		r/esource_load(db, p->name, p->type, p->dst);
+		*/
 }
 
 void

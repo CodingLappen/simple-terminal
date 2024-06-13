@@ -1,0 +1,5 @@
+X Error of failed request:  BadLength (poly request too large or internal Xlib length error)
+  Major opcode of failed request:  139 (RENDER)
+  Minor opcode of failed request:  20 (RenderAddGlyphs)
+  Serial number of failed request:  743
+  Current serial number in output stream:  1135
